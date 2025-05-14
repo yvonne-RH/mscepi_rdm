@@ -8,11 +8,11 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
 ## 🍴 Fork this repository 
 
-1. Make a personal copy of the repository by clicking the *Fork* button at the top right of the page.
+1. Make a personal copy of the repository by clicking the *Fork* button at the top right of the page. This will add the repository to your own GitHub account.
    
   ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
 
-2. This will add the repository to your own GitHub account. Navigate to your GitHub account to check
+2. Navigate to your GitHub account to check
 
 ## 🛠️ Clone it to your local machine
 
@@ -25,10 +25,23 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
   ![image](https://github.com/user-attachments/assets/e7aa53e1-ec4e-4769-b3e8-495f6c0ffaca)
 
-* ✍️ **Make your changes** - Work on your version: edit, add, or improve content.
+## ✍️ **Make your changes**
 
-* 📤 **Commit & push regularly** - Save your changes with git commit, and send them to GitHub with git push.
+Work on your version **locally**: edit, add, or improve content.
 
-* 🔁 **Keep your fork up to date** - Sync your fork with the original repo to stay current. You can do this via a pull from the upstream repository.
+## 📤 Commit & push regularly
 
-* 📬 **Submit a Pull Request (optional)** - Want to contribute back? Submit a pull request to the original repository and share your improvements.
+1. Save your changes with *Commit"
+
+![image](https://github.com/user-attachments/assets/6e4afcf0-cbd9-4206-9d49-6c3f099fb444)
+
+2. send them to GitHub with git push.
+
+## 🔁 **Keep your fork up to date**
+
+* Check with *Fetch*
+* Sync your fork with the original repo to stay current. You can do this via a pull from the upstream repository.
+
+## 📬 **Submit a Pull Request (more advanced)**
+
+Want to contribute back? Submit a pull request to the original repository and share your improvements.
