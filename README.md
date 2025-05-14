@@ -6,10 +6,11 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
 # ✅ Instructions
 
-🍴 Fork this repository
-Make a personal copy of the repository by clicking the "Fork" button at the top right of the page. This will add it to your own GitHub account.
+* 🍴 Fork this repository - Make a personal copy of the repository by clicking the "Fork" button at the top right of the page. This will add it to your own GitHub account.
 
-🛠️ Clone it to your local machine
+  ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
+
+* 🛠️ Clone it to your local machine
 Use the git clone command with your forked repository’s URL to start working locally.
 
 ✍️ Make your changes
