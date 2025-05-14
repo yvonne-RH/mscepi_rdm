@@ -2,6 +2,12 @@
 
 Welcome! This GitHub repository has been created for educational purposes and is set to public visibility so everyone can access and learn from it.
 
+## Structure
+
+* Stata subfolder
+
+* R subfolder
+
 ## ✅ Instructions
 
 ### 🍴 Fork this repository 
@@ -25,7 +31,11 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
 ### ✍️ **Make your changes**
 
-Work on your version **locally**: edit, add, or improve content.
+Work on your version **locally**
+
+1. Add a Data folder and copy the RDM datasets to this folder
+2. ⚠️ Add the content of the Data folder to gitignore
+3. Edit the code.
 
 ### 📤 Commit & push regularly
 
