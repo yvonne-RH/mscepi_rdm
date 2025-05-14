@@ -1,4 +1,4 @@
-# Research Data Management Lecture: 🔄 Version Control & 🤝 Collaboration Using GitHub
+# Research Data Management Lecture - 🔄 Version Control & 🤝 Collaboration Using GitHub
 
 Welcome! This GitHub repository has been created for educational purposes and is set to public visibility so everyone can access and learn from it.
 
