@@ -73,7 +73,8 @@ skimr::skim(raw_household_df)
 # View metadata and variable labels
 labelled::generate_dictionary(raw_household_df)
 
-clean_household_df <- raw_household_df
+clean_household_df <- raw_household_df |>
+  dplyr::mutate(date_clean = as.Date(date_final, format = "%B %d, %Y"))
 
 ########################################################
 # Merge the household-level data with the village data #
@@ -88,6 +89,18 @@ household_with_village_df <- clean_household_df |>
         by.x = "villagecode",   # Column in household data
         by.y = "vcode",         # Corresponding column in village data
         all.x = TRUE)           # Keep all household records (left join)
+
+# Create useful variables for analysis
+household_with_village_df <- household_with_village_df |>
+  dplyr::mutate(month = lubridate::floor_date(date_clean, unit = "month"),
+                altitude = dplyr::case_when(altitude_m < 1200                      ~ "<1200",
+                                            altitude_m >= 1200 & altitude_m < 1600 ~ "1200-1600",
+                                            altitude_m >= 1600                     ~ "1600+",
+                                            .default                               = NA),
+                altitude = as.factor(altitude),
+                urban = factor(urban, levels = c("1", "0"), labels = c("Urban", "Rural")),
+                selected = 1,
+                interviewed = ifelse(is.na(mosquitonet), 0,  1))
 
 # Check number of records after merge to ensure consistency
 nrow(household_with_village_df)
@@ -109,30 +122,12 @@ labelled::generate_dictionary(raw_individual_df)
 
 clean_individual_df <- raw_individual_df
 
-########################################################################
-# Merge the individual-level data with the merged household-level data #
-########################################################################
-
-
-# Check number of individual records before merge
-nrow(clean_individual_df)
-
-# Merge household and village data into individual-level data using village and household IDs
-individual_with_hh_df <- clean_individual_df |>
-  merge(household_with_village_df,
-        by.x = c("vcode", "hhid"),          # Keys in individual data
-        by.y = c("villagecode", "hhid"),    # Keys in household data
-        all.x = TRUE)                       # Keep all individual records (left join)
-
-# Check number of records after merge
-nrow(individual_with_hh_df)
-
 #######################
 # Save clean datasets #
 #######################
 
-# Save household data merged with village info
+# Save household-level data merged with village info
 haven::write_dta(household_with_village_df, "../data/cleanR_household_with_village.dta")
 
-# Save individual data merged with household and village info
-haven::write_dta(individual_with_hh_df, "../data/cleanR_individual_with_hh_and_village.dta")
+# Save individual-level data merged with household-level data
+# ...
