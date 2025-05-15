@@ -61,3 +61,7 @@ This course was orginally designed and delivered by
 * Dr. M. Kwiatkowski
 
 The materials available in this repository are based on their original content, and were adapted adapted by Dr H. Langet in 2024-2025, with inputs and feedback from M. Bresser.
+
+2025 tutors:
+* Zhihan Zhu
+* Anouk Petitpierre
