@@ -24,16 +24,57 @@ getwd()
 household_df <- haven::read_dta("../data/cleanR_household_with_village.dta")
 
 # Load the (clean) household-level data 
-individual_df <- haven::read_dta("../data/cleanR_individual_with_hh_and_village.dta")
+# ...
 ```
+# About the National Malaria Indicator Survey 2019/2020
+
+Cross-sectional household survey in all 22 provinces of Papua New Guinea.
+
+* 5 randomly sampled villages/province
+* ca. 30 random households/village
+* Structured interviews
+* Finger-prick blood sample for malaria diagnosis by Rapid Diagnostic Test (RDT) and light microscopy
+
+# Shell tables
 
 # Question 1
 
 How many household interviews were conducted per month? 
 
 ```{r}
-household_with_village_df |>
+count_df <- household_with_village_df |>
   dplyr::group_by(month) |>
   dplyr::count()
+count_df
 ```
 
+Instructions:
+
+* Step 1: Add color to bars
+* Step 2: Add data labels to the bars
+* Step 3: Adjust the y-axis limits
+* Step 4: Improve x-axis date formatting
+* Step 5: Add labels to the axes
+* Step 6: Highlight year transitions with a vertical line
+* Step 7: Apply a minimal theme
+* Step 8: Customize theme elements for cleaner look
+* Step 9: Add a caption
+* Step 10: Adjust the dimensions of the figure so that its width is twice its height
+
+```{r}
+count_df |>
+  ggplot(mapping = ggplot2::aes(x = month, y = n)) +
+    ggplot2::geom_bar(stat = "identity")
+```
+
+# Question 2
+
+Are members of households that own at least one long-lasting insecticidal net (LLIN) less likely to be infected with malaria parasites?
+
+# Question 3
+
+Does prevalence of Plasmodium vivax and P. falciparum differ between altitudinal zones?
+
+# Question 4
+
+What is the sensitivity and specificity of RDTs compared to microscopy (any species)?
