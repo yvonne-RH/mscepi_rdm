@@ -59,6 +59,10 @@ Work on your version **locally**
 
 Want to contribute back? Submit a pull request to the original repository and share your improvements.
 
+## 📚 Useful Resources
+
+* [Quarto self-paced initiation training website](https://research-it-swiss-tph.github.io/quarto_training/) - A step-by-step online training resource developed by Swiss TPH Research-IT to help you get started with some of the Quarto basics at your own pace.
+
 ## Credits
 
 This course was orginally designed and delivered by
