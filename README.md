@@ -17,7 +17,7 @@ Welcome! This GitHub repository has been created for **educational purposes** an
    
   ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
 
-> 📘 Info about [fork and clone](https://github.com/SwissTPH/mscepi_rdm/wiki/GitHub-vocabulary#fork-and-clone)
+> 📘 More info about [fork and clone](https://github.com/SwissTPH/mscepi_rdm/wiki/GitHub-vocabulary#fork-and-clone)
 
 2. Navigate to your GitHub account to check
 
@@ -31,6 +31,8 @@ Welcome! This GitHub repository has been created for **educational purposes** an
 3. Select your forked repository’s URL to start working locally.
 
   ![image](https://github.com/user-attachments/assets/e7aa53e1-ec4e-4769-b3e8-495f6c0ffaca)
+
+> 📘 More info about [fork and clone](https://github.com/SwissTPH/mscepi_rdm/wiki/GitHub-vocabulary#fork-and-clone)
 
 ### ✍️ **Make your changes**
 
