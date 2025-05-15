@@ -1,9 +1,13 @@
 * Swiss TPH - Research Data Management, 2025
 * do file for cleaning the household-level data
-* 11.04.2022 MAH
+* 2025-05-15 HL
+
+* Set up your working directory
+* YOU NEED TO MODIFY THIS PATH WHEN RUNNING THE CODE ON YOUR LOCAL ENVIRONMENT
+cd "C:/Users/langhe/Documents/GitHub/rdm2025/Stata"
 
 // Load household dataset (need to replace the provided filepath with your filepath)
-use "..\rdm2024_data\hh-data.dta", clear
+use "..\data\hh-data.dta", clear
 
 // Explore the dataset
 describe
@@ -28,4 +32,4 @@ table mosquitonet
 // Clean the dataset - to be completed
 
 // Save the dataset
-save "..\rdm2024_data\household-data-2024-clean.dta", replace
+save "..\data\household-data-2025-clean.dta", replace
