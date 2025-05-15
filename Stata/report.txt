@@ -12,42 +12,6 @@ set linesize 96
 * Date: <<dd_display: "`1'">>
 * Author: <<dd_display: "`2'">>
 
-## Practical instructions
-
-Upload to your GitHub repository by Monday, April 22nd 2024.
-
-### Material
-
-* Three uncleaned datasets from a Malaria Indicator Survey in Papua New Guinea (PNG). Modified from 2019/20 MIS by PNGIMR.
-  * practical_household.dta
-  * practical_individual.dta
-  * practical_village.csv
-* Copies of forms (in Word)
-  * MIS2020 FORM 2.doc
-  * MIS2020 FORM 3.doc
-* A variable list in Excel
-  * variable-list-RDM2023.xlsx
-* Table shells
-  * RDM_MIS_tabulations.xlsx
-
-### Data cleaning exercise
-
-* identify errors in individual variables in each dataset
-* clean the datasets 
-* merge the datasets for analyses: village and household info to individual obs.
-* document all procedures in an annotated Stata do-file
-* generate a codebook 
-
-### Analysis exercise
-
-* Completed Tables 1-4
-* Basic Codebook
-* Answer to research questions, supported by a table or graph, neatly presented in a Word document
-
-### Version control exercise
-
-* Version-controlled do-files (commit all steps with informative messages)
-
 ## About the National Malaria Indicator Survey 2019/2020
 
 Cross-sectional household survey in all 22 provinces of Papua New Guinea.
@@ -75,7 +39,7 @@ graph hbar mosquitonet, over(province)
 <</dd_do>>
 ```
 
-<<dd_graph: sav("../rdm2024_results/figure1.png") replace>>
+<<dd_graph: sav("figure1.png") replace>>
 
 
 ### Dataset 2: individual-level data
