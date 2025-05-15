@@ -12,9 +12,15 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
 ### 🍴 Fork this repository 
 
-1. Make a personal copy of the repository by clicking the *Fork* button at the top right of the page. This will add the repository to your own GitHub account.
+1. Make a personal cloud copy of the repository by clicking the *Fork* button at the top right of the page. This will add the repository to your own GitHub account.
    
   ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
+
+> 📘 Info
+> 
+> ![image](https://github.com/user-attachments/assets/b03bdd43-fd18-4cbe-8750-890f6f9ef188)
+> 
+> *Reproduced from [Forks and Pull Requests: How to Contribute to Github Repos by Daniel Wagener](https://medium.com/swlh/forks-and-pull-requests-how-to-contribute-to-github-repos-8843fac34ce8)*
 
 2. Navigate to your GitHub account to check
 
