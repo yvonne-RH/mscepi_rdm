@@ -13,7 +13,7 @@ Welcome! This GitHub repository has been created for **educational purposes** an
 ### 🍴 Fork this repository 
 
 1. Log in to your GitHub account (note: you may need to use two-factor authentication).
-2. Create your own copy of the repository by clicking the Fork button in the top-right corner of this page. This will add a personal version of the repository to your GitHub account, where you can make your own changes.
+2. Create your own copy of the repository by clicking the **Fork** button in the top-right corner of this page. This will add a personal version of the repository to your GitHub account, where you can make your own changes.
    
   ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
 
