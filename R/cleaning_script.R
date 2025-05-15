@@ -79,11 +79,18 @@ clean_household_df <- raw_household_df
 # Merge the household-level data with the village data #
 ########################################################
 
+# Check number of household records before merge
+nrow(clean_household_df)
+
+# Merge village information into household data using village codes
 household_with_village_df <- clean_household_df |>
   merge(clean_village_df,
-        by.x = "villagecode",
-        by.y = "vcode",
-        all.x = TRUE)
+        by.x = "villagecode",   # Column in household data
+        by.y = "vcode",         # Corresponding column in village data
+        all.x = TRUE)           # Keep all household records (left join)
+
+# Check number of records after merge to ensure consistency
+nrow(household_with_village_df)
 
 ############################################
 # Load and clean the individual-level data #
@@ -100,7 +107,32 @@ skimr::skim(raw_individual_df)
 # View metadata and variable labels
 labelled::generate_dictionary(raw_individual_df)
 
+clean_individual_df <- raw_individual_df
+
+########################################################################
+# Merge the individual-level data with the merged household-level data #
+########################################################################
 
 
-# Save datasets
+# Check number of individual records before merge
+nrow(clean_individual_df)
 
+# Merge household and village data into individual-level data using village and household IDs
+individual_with_hh_df <- clean_individual_df |>
+  merge(household_with_village_df,
+        by.x = c("vcode", "hhid"),          # Keys in individual data
+        by.y = c("villagecode", "hhid"),    # Keys in household data
+        all.x = TRUE)                       # Keep all individual records (left join)
+
+# Check number of records after merge
+nrow(individual_with_hh_df)
+
+#######################
+# Save clean datasets #
+#######################
+
+# Save household data merged with village info
+haven::write_dta(household_with_village_df, "../data/cleanR_household_with_village.dta")
+
+# Save individual data merged with household and village info
+haven::write_dta(individual_with_hh_df, "../data/cleanR_individual_with_hh_and_village.dta")
