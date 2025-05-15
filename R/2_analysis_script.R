@@ -26,7 +26,7 @@ library(haven)
 household_df <- haven::read_dta("../data/cleanR_household_with_village.dta")
 
 # Load the (clean) household-level data 
-individual_df <- haven::read_dta("../data/cleanR_individual_with_hh_and_village.dta")
+# ...
 
 #################
 # Shell table 1 #
@@ -38,6 +38,21 @@ individual_df <- haven::read_dta("../data/cleanR_individual_with_hh_and_village.
 
 # How many household interviews were conducted per month? 
 
-household_with_village_df |>
+count_df <- household_with_village_df |>
   dplyr::group_by(month) |>
   dplyr::count()
+
+# Modify this figure
+
+# Step 1: Add color to bars
+# Step 2: Add data labels to the bars
+# Step 3: Adjust the y-axis limits
+# Step 4: Improve x-axis date formatting
+# Step 5: Add labels to the axes
+# Step 6: Highlight year transitions with a vertical line
+# Step 7: Apply a minimal theme
+# Step 8: Customize theme elements for cleaner look
+
+count_df |>
+  ggplot(mapping = ggplot2::aes(x = month, y = n)) +
+  ggplot2::geom_bar(stat = "identity")
