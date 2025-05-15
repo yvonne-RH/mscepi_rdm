@@ -12,7 +12,8 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
 ### 🍴 Fork this repository 
 
-1. Make a personal cloud copy of the repository by clicking the *Fork* button at the top right of the page. This will add the repository to your own GitHub account.
+1. Connect to GitHub
+2. Make a personal cloud copy of the repository by clicking the *Fork* button at the top right of the page. This will add the repository to your own GitHub account.
    
   ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
 
@@ -39,9 +40,11 @@ Welcome! This GitHub repository has been created for educational purposes and is
 
 Work on your version **locally**
 
-1. Add a Data folder and copy the RDM datasets to this folder
-2. ⚠️ Add the content of the Data folder to gitignore
-3. Edit the code.
+1. Create a folder named `data` (⚠️ all lowercase) in your **local copy** of the repository
+2. Copy the three RDM datasets to this `data` folder.
+3. ⚠️ Double-check that `data/` is included in the `.gitignore` file, to make sure these datasets are not accidentally pushed to the GitHub server.
+4. Check that the three datasets in the data folder **do not appear** in GitHub Desktop. This is normal — the folder is excluded because it is listed in the `.gitignore` file.
+5. Edit the code as needed to complete your tasks.
 
 ### 📤 Commit & push regularly
 
