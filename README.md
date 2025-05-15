@@ -1,19 +1,19 @@
 # Research Data Management lecture - 🔄 Version control & 🤝 collaboration using GitHub
 
-Welcome! This GitHub repository has been created for educational purposes and is set to public visibility so everyone can access and learn from it.
+Welcome! This GitHub repository has been created for **educational purposes** and is set to public visibility so everyone can access and learn from it.
 
 ## Structure
 
-* Stata subfolder
-
-* R subfolder
+* `Stata` subfolder: contains code written in Stata (tested with State/BE 18)
+* `R` subfolder: contains code written in R
+* `data` subfolder: a folder you will add manually to store datasets (not included in the repository)
 
 ## ✅ Instructions
 
 ### 🍴 Fork this repository 
 
-1. Connect to GitHub
-2. Make a personal cloud copy of the repository by clicking the *Fork* button at the top right of the page. This will add the repository to your own GitHub account.
+1. Log in to your GitHub account (note: you may need to use two-factor authentication).
+2. Create your own copy of the repository by clicking the Fork button in the top-right corner of this page. This will add a personal version of the repository to your GitHub account, where you can make your own changes.
    
   ![image](https://github.com/user-attachments/assets/fce85dee-c069-46bf-aeda-faaeb9b7837e)
 
