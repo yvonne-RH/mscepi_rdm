@@ -1,0 +1,39 @@
+---
+title: "RDM homework - Analysis report"
+author: "Helene Langet"
+format: docx
+editor: visual
+---
+
+```{r}
+# Load required libraries
+
+# Load the tidyverse collection of packages for data manipulation and visualization
+library(tidyverse)
+
+# Load the haven package to read and work with Stata, SPSS, and SAS data files
+library(haven)
+```
+
+```{r}
+# Load data
+
+getwd()
+
+# Load the (clean) household-level data 
+household_df <- haven::read_dta("../data/cleanR_household_with_village.dta")
+
+# Load the (clean) household-level data 
+individual_df <- haven::read_dta("../data/cleanR_individual_with_hh_and_village.dta")
+```
+
+# Question 1
+
+How many household interviews were conducted per month? 
+
+```{r}
+household_with_village_df |>
+  dplyr::group_by(month) |>
+  dplyr::count()
+```
+
