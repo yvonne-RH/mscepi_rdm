@@ -50,10 +50,11 @@ clean_village_df <- raw_village_df |>
 # Convert selected variables to factors for proper categorical handling
 clean_village_df <- clean_village_df |> 
   dplyr::mutate(
-    urban      = as.factor(urban),
-    vcode      = as.factor(vcode),
-    village    = as.factor(village),
-    altitude_m = as.numeric(altitude_m))
+    urban      = as.factor(urban),         # Convert 'urban' to a factor (e.g., urban vs rural classification)
+    vcode      = as.factor(vcode),         # Convert 'vcode' (village code) to a factor for categorical use
+    village    = as.factor(village),       # Convert 'village' name to a factor
+    altitude_m = as.numeric(altitude_m)    # Ensure 'altitude_m' is numeric for any calculations or plotting
+  )
 
 # Summarize the cleaned dataset to check structure, types, and distributions
 skimr::skim(clean_village_df)
@@ -73,8 +74,24 @@ skimr::skim(raw_household_df)
 # View metadata and variable labels
 labelled::generate_dictionary(raw_household_df)
 
+# Convert 'date_final' column to Date format and store in 'date_clean'
+# Then remove the original 'date_final' column since it is no longer needed.
 clean_household_df <- raw_household_df |>
-  dplyr::mutate(date_clean = as.Date(date_final, format = "%B %d, %Y"))
+  dplyr::mutate(date_clean = as.Date(date_final, format = "%B %d, %Y")) |>
+  dplyr::select(-date_final)
+
+# Apply additional transformations to relevant columns
+clean_household_df <- clean_household_df |>
+  dplyr::mutate(
+    regcode = as.factor(regcode),         # Region code as categorical variable
+    province = as.factor(province),       # Province as categorical variable
+    villagecode = as.factor(villagecode), # Village code as categorical variable
+    hhid = as.factor(hhid),               # Household ID as categorical variable
+    mosquitonet = as.factor(mosquitonet)  # Mosquito net ownership as categorical
+  )
+
+# Summarize the cleaned dataset to check structure, types, and distributions
+skimr::skim(clean_household_df)
 
 ########################################################
 # Merge the household-level data with the village data #
@@ -90,6 +107,9 @@ household_with_village_df <- clean_household_df |>
         by.y = "vcode",         # Corresponding column in village data
         all.x = TRUE)           # Keep all household records (left join)
 
+# Check number of records after merge to ensure consistency
+nrow(household_with_village_df)
+
 # Create useful variables for analysis
 household_with_village_df <- household_with_village_df |>
   dplyr::mutate(month = lubridate::floor_date(date_clean, unit = "month"),
@@ -101,9 +121,6 @@ household_with_village_df <- household_with_village_df |>
                 urban = factor(urban, levels = c("1", "0"), labels = c("Urban", "Rural")),
                 selected = 1,
                 interviewed = ifelse(is.na(mosquitonet), 0,  1))
-
-# Check number of records after merge to ensure consistency
-nrow(household_with_village_df)
 
 ############################################
 # Load and clean the individual-level data #
