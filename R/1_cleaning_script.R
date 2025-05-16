@@ -90,6 +90,18 @@ clean_household_df <- clean_household_df |>
     mosquitonet = as.factor(mosquitonet)  # Mosquito net ownership as categorical
   )
 
+# The variable **regcode** is coded on 4 values: 0 = 0 Southern; 1 Highlands; 2 = 2 Momase; 3 = 3 Islands
+# We observe that this variable has 5 values in the dataset. 
+# To understand what is happening we look at other location information available in the dataset
+
+table(clean_household_df$province, clean_household_df$regcode)
+
+# we notice that all problematic HH interviews belong to the East Sepik region (code 2)
+# So that we reallocate these interviews to this region.
+clean_household_df <- clean_household_df |>
+  dplyr::mutate(regcode = dplyr::case_when(regcode == "20" ~ "2",
+                                           .default        = regcode))
+
 # Summarize the cleaned dataset to check structure, types, and distributions
 skimr::skim(clean_household_df)
 
