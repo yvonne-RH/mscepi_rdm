@@ -6,30 +6,34 @@
 * YOU NEED TO MODIFY THIS PATH WHEN RUNNING THE CODE ON YOUR LOCAL ENVIRONMENT
 cd "C:/Users/langhe/Documents/GitHub/rdm2025/Stata"
 
-// Load household dataset (need to replace the provided filepath with your filepath)
-use "..\data\hh-data.dta", clear
+* Load the dataset
+use "../data/hh-data.dta", clear
 
-// Explore the dataset
+* Display structure: variable names, types, and labels
 describe
 
-// Tabulate
-tab mosquitonet
+* Summarize variables (includes type, missing, basic stats)
+summarize
 
-// clean village codes
-replace villagecode = "IMO" if villagecode == "IM0"
+* View variable labels (metadata)
+codebook
 
-// clean province name - excess spaces
-gen province_clean = stritrim(province)
+* Convert 'date_final' from string to date format (assuming format like "January 01, 2023")
+* First, convert the string to a Stata date
+gen date_clean = date(date_final, "MDY", 2025)  // Replace 2025 if year system matters
+format date_clean %td  // Format as date
 
-// drop duplicates
-duplicates drop   // drops observations that are exactly the same across all variables
-duplicates tag villagecode hhid, gen(duplicate) // drop duplicates in hhid and vcode > cannot be merged with individual level
+* Drop the original 'date_final' column
+drop date_final
 
-destring hhid, replace
+* Investigate problematic region codes
+tab province regcode
 
-table mosquitonet
+* Recode incorrect region code: set regcode "20" to "2"
+replace regcode = 2 if regcode == 20
 
-// Clean the dataset - to be completed
+* View updated summary
+summarize
 
 // Save the dataset
-save "..\data\household-data-2025-clean.dta", replace
+save "..\data\cleanStata_household_data.dta", replace
