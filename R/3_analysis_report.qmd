@@ -13,13 +13,13 @@ library(tidyverse)
 
 # Load the haven package to read and work with Stata, SPSS, and SAS data files
 library(haven)
+
+# Load the gtsummary package to create publication-ready summary tables
+# Useful for descriptive statistics and model result tables with clean formatting
+library(gtsummary)
 ```
 
 ```{r}
-# Load data
-
-getwd()
-
 # Load the (clean) household-level data 
 household_df <- haven::read_dta("../data/cleanR_household_with_village.dta")
 
@@ -37,12 +37,24 @@ Cross-sectional household survey in all 22 provinces of Papua New Guinea.
 
 # Shell tables
 
+## Shell 1
+
+## Shell 2
+
+```{r}
+household_df |>
+  dplyr::select(altitude) |>
+  gtsummary::tbl_summary(label = list("altitude" ~ "Altitude (m)"))
+```
+
+## Shell 3
+
 # Question 1
 
 How many household interviews were conducted per month? 
 
 ```{r}
-count_df <- household_with_village_df |>
+count_df <- household_df |>
   dplyr::group_by(month) |>
   dplyr::count()
 count_df
