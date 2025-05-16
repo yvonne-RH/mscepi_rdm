@@ -2,7 +2,10 @@
 
 Welcome! This GitHub repository has been created for **educational purposes** and is set to public visibility so everyone can access and learn from it.
 
-## Structure
+* Author: yvonne Haridas
+* Date: 16.05.2025
+
+* ## Structure
 
 * `Stata` subfolder: contains code written in Stata (tested with State/BE 18)
 * `R` subfolder: contains code written in R
